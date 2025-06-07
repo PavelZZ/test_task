@@ -34,8 +34,13 @@ import {
 import {
     createRandomDictionary
 } from "@/utils";
+import MyComponent from './components/MyComponent';
 
 const CUSTOM_NODE_PROP: ReactFlowProps['nodeTypes'] = { custom: Node };
+const styles = {
+                width: '50vw',
+                height: '50vh'
+            };
 function App() {
 
     const {
@@ -116,10 +121,7 @@ function App() {
 
     return (
         <div
-            style={{
-                width: '100vw',
-                height: '100vh'
-            }}
+            style={styles}
         >
             <ReactFlowProvider>
                 <ReactFlow
@@ -133,12 +135,17 @@ function App() {
 
                 >
                     <Panel>
-                        <FPSCounter/>
                         <button onClick={addNode}>Add Node</button>
                     </Panel>
                     <Background variant={BackgroundVariant.Dots} gap={12} size={1}/>
                 </ReactFlow>
             </ReactFlowProvider>
+            <MyComponent text='текст'>
+                <div>
+                    hello
+                </div>
+            </MyComponent>
+            <FPSCounter />
         </div>
     )
 }

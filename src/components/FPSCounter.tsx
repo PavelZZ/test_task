@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, memo } from "react";
 
 const FPSCounter: React.FC = () => {
     const [fps, setFps] = useState(0);
@@ -48,4 +48,4 @@ const FPSCounter: React.FC = () => {
     );
 };
 
-export default FPSCounter;
+export default memo(FPSCounter);
